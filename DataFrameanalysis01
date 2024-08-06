@@ -1,0 +1,26 @@
+import numpy as np
+import pandas as pd
+
+# Create dataframe
+data = {'Company':['GOOG','GOOG','MSFT','MSFT','FB','FB', 'Apple', 'Apple', 'Apple'],
+       'Person':['Sam','Charlie','Amy','Vanessa','Carl','Sarah', 'Robert','Iran','Carlos'],
+       'Sales':[200,120,340,124,243,350,450,200,157]}
+
+df = pd.DataFrame(data)
+
+# Show the dataframe
+
+df
+
+# Showing important infos like the number of entries and the number of null values.
+df.info()
+
+# Creating a function for get static about each person:
+
+def person_sales(name) {
+  sales_per_person = df[df['Person']==name]['Sales']
+  
+}
+
+person_sales(input('Type the name of a person in dataframe.:'))
+
