@@ -19,7 +19,7 @@ df.info()
 
 def person_sales(name):
   sales_per_person = df[df['Person']==name]['Sales']
-  
+  print(sales_per_person)
 
 
 person_sales(input('Type the name of a person in dataframe.:'))
