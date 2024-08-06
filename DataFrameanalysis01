@@ -17,10 +17,10 @@ df.info()
 
 # Creating a function for get static about each person:
 
-def person_sales(name) {
+def person_sales(name):
   sales_per_person = df[df['Person']==name]['Sales']
   
-}
+
 
 person_sales(input('Type the name of a person in dataframe.:'))
 
