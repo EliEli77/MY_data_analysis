@@ -9,18 +9,27 @@ data = {'Company':['GOOG','GOOG','MSFT','MSFT','FB','FB', 'Apple', 'Apple', 'App
 df = pd.DataFrame(data)
 
 # Show the dataframe
-
 df
 
 # Showing important infos like the number of entries and the number of null values.
 df.info()
 
-# Creating a function for get static about each person:
+# Creating a function to get the sales about each person.
 
 def person_sales(name):
   sales_per_person = df[df['Person']==name]['Sales']
   print(sales_per_person)
 
-
 person_sales(input('Type the name of a person in dataframe.:'))
+
+# Function to create some analytical plots of the dataframe.
+
+def graphs():
+   sns.distplot(df['Sales'], kde=False, bins=30)
+   sns.jointplot(x='Person',y='Sales',data=df,kind='scatter')
+   sns.pairplot(df,hue='Company')
+
+graphs()
+
+
 
