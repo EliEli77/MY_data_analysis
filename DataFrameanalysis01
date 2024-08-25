@@ -17,12 +17,17 @@ df.info()
 # Creating a function to get the sales about each person.
 
 def person_sales(name):
-  sales_per_person = df[df['Person']==name]['Sales']
-  print(sales_per_person)
+  print(df[df['Person']==name]['Sales'])
+person_sales(input('Type the name of a person in dataframe:'))
 
-person_sales(input('Type the name of a person in dataframe.:'))
+# Creating a function to get the infos for each one of the companies.
+def company_info(company_name):
+    print(df[df['Company']==company_name])
 
-# Function to create some analytical plots of the dataframe.
+company_info(input('Type GOOG for Google, MSFT for Microsoft, FB for Facebook or Apple'))
+
+
+# Function to create some statistical plots of the dataframe.
 
 def graphs():
    sns.distplot(df['Sales'], kde=False, bins=30)
@@ -30,6 +35,14 @@ def graphs():
    sns.pairplot(df,hue='Company')
 
 graphs()
+
+# One more function to create more statistical plots.
+
+def graphs02()
+   sns.barplot(x='Person',y='Sales',data=df)
+   sns.boxplot(x='Company',y='Sales',data=df)
+
+graphs02()
 
 
 
